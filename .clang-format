@@ -1,0 +1,14 @@
+BasedOnStyle: Google
+IndentWidth: 4
+TabWidth: 4
+AccessModifierOffset: -4
+AllowShortIfStatementsOnASingleLine: true
+AllowShortLoopsOnASingleLine: true
+AllowShortFunctionsOnASingleLine: true
+AllowShortCaseLabelsOnASingleLine: true
+AllowAllConstructorInitializersOnNextLine: false
+AlwaysBreakBeforeMultilineStrings: false
+ColumnLimit: 80
+PointerAlignment: Left
+SortIncludes: false
+SortUsingDeclarations: false
