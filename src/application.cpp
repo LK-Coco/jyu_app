@@ -9,9 +9,19 @@
 
 namespace Jyu {
 
-Application::Application(const ApplicationSpec& spec) : spec_(spec) { init(); }
+static Application* s_instance = nullptr;
 
-Application::~Application() { destroy(); }
+Application::Application(const ApplicationSpec& spec) : spec_(spec) {
+    s_instance = this;
+    init();
+}
+
+Application::~Application() {
+    destroy();
+    s_instance = nullptr;
+}
+
+Application& Application::get() { return *s_instance; }
 
 void Application::init() {
     // 初始化GLFW

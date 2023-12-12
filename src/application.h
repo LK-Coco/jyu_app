@@ -22,6 +22,10 @@ public:
     Application(const ApplicationSpec& spec = ApplicationSpec());
     ~Application();
 
+    static Application& get();
+
+    GLFWwindow* get_window_handle() const { return window_; }
+
     void run();
 
     void close();
