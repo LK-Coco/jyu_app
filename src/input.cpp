@@ -11,10 +11,22 @@ bool Input::is_key_down(KeyCode key_code) {
     return state == GLFW_PRESS || state == GLFW_REPEAT;
 }
 
+bool Input::is_key_up(KeyCode key_code) {
+    GLFWwindow* window_handle = Application::get().get_window_handle();
+    int state = glfwGetKey(window_handle, (int)key_code);
+    return state == GLFW_RELEASE;
+}
+
 bool Input::is_mouse_button_down(MouseButton button) {
     GLFWwindow* window_handle = Application::get().get_window_handle();
     int state = glfwGetMouseButton(window_handle, (int)button);
-    return state == GLFW_PRESS;
+    return state == GLFW_PRESS || state == GLFW_REPEAT;
+}
+
+bool Input::is_mouse_button_up(MouseButton button) {
+    GLFWwindow* window_handle = Application::get().get_window_handle();
+    int state = glfwGetMouseButton(window_handle, (int)button);
+    return state == GLFW_RELEASE;
 }
 
 glm::vec2 Input::get_mouse_position() {

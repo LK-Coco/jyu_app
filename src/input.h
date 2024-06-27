@@ -9,7 +9,11 @@ class Input {
 public:
     static bool is_key_down(KeyCode key_code);
 
+    static bool is_key_up(KeyCode key_code);
+
     static bool is_mouse_button_down(MouseButton button);
+
+    static bool is_mouse_button_up(MouseButton button);
 
     static glm::vec2 get_mouse_position();
 
